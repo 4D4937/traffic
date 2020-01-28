@@ -27,7 +27,7 @@ if re.search(r"TiB",tx):
     tx_data =  float(re.sub(r"\s","",tx)[:-3])
     if tx_data > 2: 
         os.system("date=`date +%Y-%m-%d_%H:%M:%S` && echo ${date}' 服务器出向流量已超过，自动关闭shadowsocks' >> /root/stopss.log")
-		os.system("shutdown -h now")
+	os.system("shutdown -h now")
     else:
         cmd = "date=`date +%Y-%m-%d_%H:%M:%S` && echo ${date}' 服务器当前已使用流量 "+str(tx_data)+" TiB' >> /root/stopss.log"
         os.system(cmd)
